@@ -30,8 +30,9 @@
   --color-ring: var(--ring);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Sora', 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 :root {
@@ -84,6 +85,9 @@ html { color-scheme: dark; }
     background-attachment: fixed;
   }
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; }
+  h1 { letter-spacing: -0.035em; }
+  h2 { letter-spacing: -0.03em; }
 }
 
 @layer utilities {
