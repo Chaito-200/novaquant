@@ -7,10 +7,11 @@ export function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border/50">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
         <Logo className="h-7" />
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#approccio" className="hover:text-foreground transition-colors">Approccio</a>
+        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+          <a href="#come-funziona" className="hover:text-foreground transition-colors">Come funziona</a>
           <a href="#sistemi" className="hover:text-foreground transition-colors">Sistemi</a>
           <a href="#performance" className="hover:text-foreground transition-colors">Performance</a>
+          <a href="#cosa-non-siamo" className="hover:text-foreground transition-colors">Cosa non siamo</a>
           <a href="#chi-siamo" className="hover:text-foreground transition-colors">Chi siamo</a>
         </nav>
         <a

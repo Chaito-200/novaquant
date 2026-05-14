@@ -15,11 +15,11 @@ const yes = [
 
 export function PerChi() {
   return (
-    <section className="relative py-24 sm:py-32 border-t border-border/40">
+    <section className="relative py-20 sm:py-32 border-t border-border/40">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-10 sm:mb-12">
           <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Per chi è</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
             NovaQuant non è per tutti — ed è giusto così.
           </h2>
         </div>

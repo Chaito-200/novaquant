@@ -11,16 +11,17 @@ const items = [
 
 export function Approccio() {
   return (
-    <section id="approccio" className="relative py-24 sm:py-32">
+    <section id="approccio" className="relative py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl mb-14">
+        <div className="max-w-2xl mb-10 sm:mb-14">
           <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Approccio</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient leading-tight">
-            Un'alternativa concreta a sale segnali, martingala e copy trading aggressivi.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
+            Un'alternativa seria al mondo dei segnali, della martingala e dei guru.
           </h2>
-          <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-muted-foreground text-base sm:text-lg leading-relaxed">
             NovaQuant nasce dalla passione per il trading quantitativo e la programmazione.
-            L'obiettivo è semplice: costruire sistemi robusti, monitorarli nel tempo e mostrare i risultati per quello che sono.
+            L'obiettivo è semplice: costruire sistemi robusti, monitorarli nel tempo
+            e mostrare i risultati per quello che sono — senza filtri di marketing.
           </p>
         </div>
 

@@ -4,16 +4,16 @@ const equityPath = "M0,180 C50,170 100,165 150,150 C200,135 250,140 300,120 C350
 
 export function Performance() {
   return (
-    <section id="performance" className="relative py-24 sm:py-32 border-t border-border/40">
+    <section id="performance" className="relative py-20 sm:py-32 border-t border-border/40">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-10 sm:mb-12">
           <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Performance</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient leading-tight">
-            Dati reali, non slide di marketing.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
+            Dati reali. Niente slide di marketing.
           </h2>
-          <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-            Pubblichiamo equity curve, metriche e statistiche dei sistemi. Lavoriamo per integrare
-            il monitoraggio Myfxbook in modo che chiunque possa verificare i risultati in autonomia.
+          <p className="mt-4 sm:mt-5 text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Pubblichiamo equity curve, drawdown e metriche dei sistemi. Stiamo integrando
+            il tracking Myfxbook in modo che chiunque possa verificare i risultati live, in autonomia.
           </p>
         </div>
 
