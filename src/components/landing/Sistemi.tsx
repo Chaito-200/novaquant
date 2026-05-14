@@ -34,18 +34,18 @@ const systems = [
 
 export function Sistemi() {
   return (
-    <section id="sistemi" className="relative py-24 sm:py-32 border-t border-border/40">
+    <section id="sistemi" className="relative py-20 sm:py-32 border-t border-border/40">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-xl">
             <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Sistemi</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gradient leading-tight">
-              Una flotta di sistemi, un unico portfolio.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
+              Più sistemi, un unico portfolio.
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-            Strategie indipendenti su mercati diversi, aggregate in un portfolio multi-strategy
-            con correlazioni controllate e risk budgeting dinamico.
+          <p className="text-muted-foreground max-w-md text-sm sm:text-base leading-relaxed">
+            Strategie indipendenti su mercati diversi (oro, indici, crypto), aggregate in
+            un unico portfolio. Quando una strategia rallenta, le altre compensano.
           </p>
         </div>
 
