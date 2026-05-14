@@ -1,9 +1,12 @@
 import logo from "@/assets/novaquant-logo.jpg";
 
-export function Logo({ className = "h-8" }: { className?: string }) {
+export function Logo({ className = "h-9" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <img src={logo} alt="NovaQuant logo" className="h-full w-auto rounded-md" />
-    </div>
+    <img
+      src={logo}
+      alt="NovaQuant"
+      className={`${className} w-auto object-contain`}
+      style={{ filter: "drop-shadow(0 0 12px oklch(0.65 0.22 255 / 0.25))" }}
+    />
   );
 }
