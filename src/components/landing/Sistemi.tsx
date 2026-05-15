@@ -22,14 +22,6 @@ const systems = [
     metrics: { ret: "+22.1%", dd: "-9.4%", trades: "184", sharpe: "1.41" },
     color: "from-orange-500/20 to-transparent",
   },
-  {
-    name: "Portfolio Core",
-    market: "Multi-asset",
-    type: "Aggregato · live",
-    metrics: { ret: "+34.7%", dd: "-7.2%", trades: "2,418", sharpe: "1.84" },
-    color: "from-emerald-500/15 to-transparent",
-    featured: true,
-  },
 ];
 
 export function Sistemi() {
