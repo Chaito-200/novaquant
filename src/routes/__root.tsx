@@ -76,9 +76,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Sistemi di trading algoritmico multi-strategy basati su dati, portfolio diversificati e gestione del rischio. Approccio systematic, trasparente, professionale." },
       { name: "author", content: "NovaQuant" },
       { property: "og:title", content: "NovaQuant — Trading Algoritmico Quantitativo" },
-      { property: "og:description", content: "Sistemi automatici multi-strategy. Dati reali, gestione del rischio, approccio systematic." },
+      { property: "og:description", content: "Sistemi di trading algoritmico multi-strategy basati su dati, portfolio diversificati e gestione del rischio. Approccio systematic, trasparente, professionale." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "NovaQuant — Trading Algoritmico Quantitativo" },
+      { name: "twitter:description", content: "Sistemi di trading algoritmico multi-strategy basati su dati, portfolio diversificati e gestione del rischio. Approccio systematic, trasparente, professionale." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a13f64c-af35-4359-9e4b-c42a797c4ae4/id-preview-ee1e5678--4618b486-4577-4eb9-9154-f62a70e83e85.lovable.app-1778835333147.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3a13f64c-af35-4359-9e4b-c42a797c4ae4/id-preview-ee1e5678--4618b486-4577-4eb9-9154-f62a70e83e85.lovable.app-1778835333147.png" },
     ],
     links: [
       {
