@@ -16,8 +16,8 @@ export function Hero() {
               Trading algoritmico · Copy trading
             </div>
             <h1 className="text-[2rem] leading-[1.1] sm:text-5xl lg:text-6xl font-semibold text-gradient">
-              I nostri algoritmi fanno trading.{" "}
-              <span className="text-gradient-blue">Tu vedi i risultati.</span>
+              Trading algoritmico costruito sui dati,{" "}
+              <span className="text-gradient-blue">non sulle promesse.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
               NovaQuant è un progetto italiano di trading quantitativo. I nostri sistemi
