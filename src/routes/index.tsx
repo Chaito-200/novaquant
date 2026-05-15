@@ -5,7 +5,6 @@ import { ComeFunziona } from "@/components/landing/ComeFunziona";
 import { Approccio } from "@/components/landing/Approccio";
 import { Sistemi } from "@/components/landing/Sistemi";
 import { FxBlueWidget } from "@/components/landing/FxBlueWidget";
-import { Performance } from "@/components/landing/Performance";
 import { CosaNonSiamo } from "@/components/landing/CosaNonSiamo";
 import { ChiSiamo } from "@/components/landing/ChiSiamo";
 import { PerChi } from "@/components/landing/PerChi";
@@ -25,7 +24,6 @@ function Index() {
       <Approccio />
       <Sistemi />
       <FxBlueWidget />
-      <Performance />
       <CosaNonSiamo />
       <ChiSiamo />
       <PerChi />
