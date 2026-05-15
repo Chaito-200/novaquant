@@ -22,14 +22,6 @@ const systems = [
     metrics: { ret: "+22.1%", dd: "-9.4%", trades: "184", sharpe: "1.41" },
     color: "from-orange-500/20 to-transparent",
   },
-  {
-    name: "Portfolio Core",
-    market: "Multi-asset",
-    type: "Aggregato · live",
-    metrics: { ret: "+34.7%", dd: "-7.2%", trades: "2,418", sharpe: "1.84" },
-    color: "from-emerald-500/15 to-transparent",
-    featured: true,
-  },
 ];
 
 export function Sistemi() {
@@ -53,7 +45,7 @@ export function Sistemi() {
           {systems.map((s) => (
             <article
               key={s.name}
-              className={`relative card-elevated rounded-xl p-6 overflow-hidden ${s.featured ? "ring-1 ring-primary/40" : ""}`}
+              className="relative card-elevated rounded-xl p-6 overflow-hidden"
             >
               <div className={`absolute -top-20 -right-20 w-56 h-56 rounded-full bg-gradient-to-br ${s.color} blur-3xl pointer-events-none`} />
 
@@ -62,11 +54,6 @@ export function Sistemi() {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="text-lg font-semibold">{s.name}</h3>
-                      {s.featured && (
-                        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">
-                          Live
-                        </span>
-                      )}
                     </div>
                     <p className="text-xs font-mono text-muted-foreground">{s.market}</p>
                   </div>
