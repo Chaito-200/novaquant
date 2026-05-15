@@ -24,6 +24,7 @@ function Index() {
       <ComeFunziona />
       <Approccio />
       <Sistemi />
+      <FxBlueWidget />
       <Performance />
       <CosaNonSiamo />
       <ChiSiamo />
