@@ -35,7 +35,7 @@ export function Hero() {
                 Entra nel canale Telegram
               </a>
               <a
-                href="#come-funziona"
+                href="#cosa-offriamo"
                 className="inline-flex items-center gap-2 rounded-xl hairline bg-surface/60 px-5 sm:px-6 py-3 sm:py-3.5 text-sm sm:text-base font-medium hover:bg-surface transition"
               >
                 Come funziona
