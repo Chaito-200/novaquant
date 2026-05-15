@@ -8,7 +8,7 @@ export function Nav() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
         <Logo className="h-7" />
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          <a href="#come-funziona" className="hover:text-foreground transition-colors">Come funziona</a>
+          <a href="#cosa-offriamo" className="hover:text-foreground transition-colors">Cosa offriamo</a>
           <a href="#sistemi" className="hover:text-foreground transition-colors">Sistemi</a>
           <a href="#performance" className="hover:text-foreground transition-colors">Performance</a>
           <a href="#cosa-non-siamo" className="hover:text-foreground transition-colors">Cosa non siamo</a>
