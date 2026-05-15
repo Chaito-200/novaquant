@@ -20,11 +20,11 @@ function Index() {
     <main className="min-h-screen">
       <Nav />
       <Hero />
-      <ComeFunziona />
       <Approccio />
       <Sistemi />
       <FxBlueWidget />
       <CosaNonSiamo />
+      <ComeFunziona />
       <ChiSiamo />
       <PerChi />
       <CtaTelegram />
