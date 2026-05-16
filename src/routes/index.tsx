@@ -3,8 +3,7 @@ import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
 import { ComeFunziona } from "@/components/landing/ComeFunziona";
 import { Approccio } from "@/components/landing/Approccio";
-import { Sistemi } from "@/components/landing/Sistemi";
-import { FxBlueWidget } from "@/components/landing/FxBlueWidget";
+import { SistemiPortfolio } from "@/components/landing/SistemiPortfolio";
 import { CosaNonSiamo } from "@/components/landing/CosaNonSiamo";
 import { ChiSiamo } from "@/components/landing/ChiSiamo";
 import { PerChi } from "@/components/landing/PerChi";
@@ -21,8 +20,7 @@ function Index() {
       <Nav />
       <Hero />
       <Approccio />
-      <Sistemi />
-      <FxBlueWidget />
+      <SistemiPortfolio />
       <CosaNonSiamo />
       <ComeFunziona />
       <ChiSiamo />
