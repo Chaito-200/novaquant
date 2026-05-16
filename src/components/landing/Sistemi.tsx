@@ -76,7 +76,7 @@ export function Sistemi() {
         </div>
 
         <p className="mt-8 text-xs text-muted-foreground font-mono text-center">
-          // Statistiche placeholder — i dati live sono disponibili sul canale Telegram
+          // Statistiche placeholder · i dati live sono disponibili sul canale Telegram
         </p>
       </div>
     </section>

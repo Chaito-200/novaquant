@@ -23,7 +23,7 @@ export function CosaNonSiamo() {
         <div className="max-w-2xl mb-10 sm:mb-14">
           <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Cosa NON siamo</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
-            Tutto ciò che NovaQuant <span className="text-gradient-blue">non è</span> — perché conta più di quello che è.
+            Tutto ciò che NovaQuant <span className="text-gradient-blue">non è</span>, perché conta più di quello che è.
           </h2>
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
             Il mondo del trading retail è pieno di scorciatoie che non funzionano. Ti diciamo

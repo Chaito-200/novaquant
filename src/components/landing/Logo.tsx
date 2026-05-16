@@ -1,4 +1,4 @@
-import logo from "@/assets/novaquant-logo.jpg";
+import logo from "@/assets/novaquant-logo-header.png";
 
 export function Logo({ className = "h-9" }: { className?: string }) {
   return (

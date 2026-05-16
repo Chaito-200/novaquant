@@ -16,8 +16,8 @@ export function ChiSiamo() {
               di sistemi automatici robusti.
             </p>
             <p>
-              Il nostro focus non è promettere rendimenti garantiti — non esistono. Il nostro
-              focus è sviluppare strategie, testarle, monitorarle e — quando serve —
+              Il nostro focus non è promettere rendimenti garantiti, perché non esistono. Il nostro
+              focus è sviluppare strategie, testarle, monitorarle e, quando serve,
               spegnerle. Senza emozioni, senza marketing.
             </p>
             <p className="text-foreground">

@@ -20,7 +20,7 @@ export function CtaTelegram() {
             <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
               Sul canale Telegram pubblichiamo aggiornamenti dei sistemi, statistiche live e
               come funziona davvero il copy trading sui nostri algoritmi. Niente hype, niente
-              promesse — solo lavoro e dati.
+              promesse. Solo lavoro e dati.
             </p>
             <div className="mt-8 sm:mt-10 flex justify-center">
               <a

@@ -20,7 +20,7 @@ export function PerChi() {
         <div className="max-w-2xl mb-10 sm:mb-12">
           <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Per chi è</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient leading-[1.15]">
-            NovaQuant non è per tutti — ed è giusto così.
+            NovaQuant non è per tutti, ed è giusto così.
           </h2>
         </div>
 
