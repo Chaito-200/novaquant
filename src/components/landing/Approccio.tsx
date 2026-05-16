@@ -4,7 +4,7 @@ const items = [
   { icon: Database, title: "Decisioni basate sui dati", desc: "Ogni sistema nasce da analisi quantitativa, backtest rigorosi e validazione statistica. Niente intuizioni, niente sale segnali." },
   { icon: Layers, title: "Portfolio multi-strategy", desc: "Diverse strategie su mercati e timeframe diversi. La diversificazione è il primo strumento di gestione del rischio." },
   { icon: ShieldCheck, title: "Risk management first", desc: "Stop loss, position sizing e drawdown control non sono opzionali. Sono la base di ogni sistema che pubblichiamo." },
-  { icon: LineChart, title: "Monitoraggio continuo", desc: "I sistemi vengono osservati, misurati e — quando necessario — disattivati. Niente strategie 'fire and forget'." },
+  { icon: LineChart, title: "Monitoraggio continuo", desc: "I sistemi vengono osservati, misurati e, quando necessario, disattivati. Niente strategie 'fire and forget'." },
   { icon: Code2, title: "Approccio systematic", desc: "Regole codificate, esecuzione automatica. Rimuoviamo l'emozione dal processo decisionale." },
   { icon: Activity, title: "Trasparenza reale", desc: "Equity curve, metriche e statistiche disponibili in tempo reale. I dati parlano prima di noi." },
 ];
@@ -21,7 +21,7 @@ export function Approccio() {
           <p className="mt-4 sm:mt-5 text-muted-foreground text-base sm:text-lg leading-relaxed">
             NovaQuant nasce dalla passione per il trading quantitativo e la programmazione.
             L'obiettivo è semplice: costruire sistemi robusti, monitorarli nel tempo
-            e mostrare i risultati per quello che sono — senza filtri di marketing.
+            e mostrare i risultati per quello che sono, senza filtri di marketing.
           </p>
         </div>
 

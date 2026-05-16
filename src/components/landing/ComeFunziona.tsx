@@ -15,7 +15,7 @@ const pillars = [
   {
     icon: Handshake,
     title: "Modello win-win, non un abbonamento",
-    desc: "Niente fee fisse, niente segnali a pagamento, niente corsi. Una performance fee solo sui profitti reali — se non guadagni tu, non guadagniamo noi.",
+    desc: "Niente fee fisse, niente segnali a pagamento, niente corsi. Una performance fee solo sui profitti reali: se non guadagni tu, non guadagniamo noi.",
   },
 ];
 
