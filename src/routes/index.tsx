@@ -9,6 +9,7 @@ import { ChiSiamo } from "@/components/landing/ChiSiamo";
 import { PerChi } from "@/components/landing/PerChi";
 import { CtaTelegram } from "@/components/landing/CtaTelegram";
 import { Footer } from "@/components/landing/Footer";
+import { Reveal } from "@/components/landing/Reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -19,13 +20,13 @@ function Index() {
     <main className="min-h-screen">
       <Nav />
       <Hero />
-      <Approccio />
-      <SistemiPortfolio />
-      <CosaNonSiamo />
-      <ComeFunziona />
-      <ChiSiamo />
-      <PerChi />
-      <CtaTelegram />
+      <Reveal><Approccio /></Reveal>
+      <Reveal><SistemiPortfolio /></Reveal>
+      <Reveal><CosaNonSiamo /></Reveal>
+      <Reveal><ComeFunziona /></Reveal>
+      <Reveal><ChiSiamo /></Reveal>
+      <Reveal><PerChi /></Reveal>
+      <Reveal><CtaTelegram /></Reveal>
       <Footer />
     </main>
   );
