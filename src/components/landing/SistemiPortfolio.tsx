@@ -426,10 +426,6 @@ function PerformanceLive() {
           />
         </div>
       </div>
-
-      <p className="mt-4 text-xs text-muted-foreground font-mono text-center">
-        // I backtest analizzano i singoli sistemi. FX Blue monitora il portfolio live.
-      </p>
     </div>
   );
 }
