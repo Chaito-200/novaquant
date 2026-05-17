@@ -246,7 +246,7 @@ function DonutTooltip({ active, payload }: { active?: boolean; payload?: Array<{
     <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur px-3 py-2 text-xs shadow-xl">
       <p className="font-semibold text-foreground">{s.name}</p>
       <p className="font-mono text-muted-foreground mt-0.5">
-        {s.market} · {s.type}
+        {s.market} · {s.timeframe}
         {s.direction ? ` · ${s.direction}` : ""}
       </p>
     </div>
@@ -327,7 +327,7 @@ function SystemCard({
             {system.name}
           </h4>
           <p className="text-[11px] font-mono text-muted-foreground mt-1">
-            {system.market} · {system.type}
+            {system.market} · {system.timeframe}
             {system.direction ? ` · ${system.direction}` : ""}
           </p>
         </div>
@@ -453,7 +453,7 @@ function SystemDetailsDialog({
                   style={{ background: system.color }}
                 />
                 <span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
-                  {system.market} · {system.type}
+                  {system.market} · {system.timeframe}
                   {system.direction ? ` · ${system.direction}` : ""}
                 </span>
               </div>
