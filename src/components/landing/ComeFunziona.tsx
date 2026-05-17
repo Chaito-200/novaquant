@@ -53,7 +53,7 @@ export function ComeFunziona() {
             <div>
               <p className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-3">// Ripartizione profitti</p>
               <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3">
-                Il 70% dei profitti è tuo. Il 20% è la nostra performance fee.
+                L'80% dei profitti è tuo. Il 20% è la nostra performance fee.
               </h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Una formula win-win: noi guadagniamo solo quando guadagni anche tu. Nessun
@@ -63,7 +63,7 @@ export function ComeFunziona() {
             </div>
             <div className="flex gap-4 sm:gap-6 items-end">
               <div className="text-center">
-                <p className="text-4xl sm:text-5xl font-bold text-gradient-blue font-mono leading-none">70%</p>
+                <p className="text-4xl sm:text-5xl font-bold text-gradient-blue font-mono leading-none">80%</p>
                 <p className="text-xs text-muted-foreground mt-2 uppercase tracking-wider">a te</p>
               </div>
               <div className="h-12 w-px bg-border" />
