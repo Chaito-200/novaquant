@@ -24,6 +24,7 @@ type System = {
   market: "XAUUSD" | "NAS100" | "BTCUSD" | "GER40";
   type: string;
   direction?: "Buy" | "Sell";
+  timeframe: string;
   status: Status;
   weight: number;
   color: string;
@@ -31,15 +32,15 @@ type System = {
 };
 
 const SYSTEMS: System[] = [
-  { id: "xau-bo", name: "XAU Breakout", market: "XAUUSD", type: "Breakout", status: "Live", weight: 1, color: "oklch(0.78 0.16 240)", description: "Sistema breakout su oro. Apre posizioni sulla rottura di livelli chiave di volatilità con stop loss strutturale e trailing dinamico." },
-  { id: "xau-mr", name: "XAU Mean Reversion", market: "XAUUSD", type: "Mean Reversion", status: "Live", weight: 1, color: "oklch(0.72 0.18 245)", description: "Strategia mean reversion su oro. Sfrutta gli eccessi di prezzo di breve periodo con take profit fissi e gestione del rischio prudente." },
-  { id: "xau-tf", name: "XAU Trend Following", market: "XAUUSD", type: "Trend Following", status: "Live", weight: 1, color: "oklch(0.66 0.20 250)", description: "Sistema trend following su oro. Cavalca movimenti direzionali di medio periodo con trailing stop progressivo." },
-  { id: "nas-bo-buy", name: "NAS100 Range Breakout Buy", market: "NAS100", type: "Range Breakout", direction: "Buy", status: "Live", weight: 1, color: "oklch(0.74 0.15 220)", description: "Long-only su Nasdaq 100. Entra sulla rottura rialzista di range di sessione con stop loss e take profit definiti." },
-  { id: "nas-bo-sell", name: "NAS100 Range Breakout Sell", market: "NAS100", type: "Range Breakout", direction: "Sell", status: "Live", weight: 1, color: "oklch(0.62 0.17 225)", description: "Short-only su Nasdaq 100. Specchio del sistema buy, opera sulle rotture ribassiste con la stessa logica simmetrica." },
-  { id: "btc-bo-buy", name: "BTCUSD Breakout Buy", market: "BTCUSD", type: "Breakout", direction: "Buy", status: "Live", weight: 1, color: "oklch(0.70 0.16 255)", description: "Long-only su Bitcoin. Sfrutta i breakout di volatilità tipici delle fasi di espansione del prezzo." },
-  { id: "btc-bo-sell", name: "BTCUSD Breakout Sell", market: "BTCUSD", type: "Breakout", direction: "Sell", status: "Testing", weight: 1, color: "oklch(0.58 0.18 260)", description: "Short-only su Bitcoin. Attualmente in fase di testing prima del passaggio al portfolio live." },
-  { id: "ger-bo-buy", name: "GER40 Range Breakout Buy", market: "GER40", type: "Range Breakout", direction: "Buy", status: "Live", weight: 1, color: "oklch(0.68 0.10 235)", description: "Long-only sull'indice DAX. Opera sulla rottura del range di apertura con gestione del rischio integrata." },
-  { id: "ger-bo-sell", name: "GER40 Range Breakout Sell", market: "GER40", type: "Range Breakout", direction: "Sell", status: "Live", weight: 1, color: "oklch(0.56 0.10 240)", description: "Short-only sull'indice DAX. Versione speculare del sistema buy, completa il portfolio di sessione europea." },
+  { id: "xau-bo", name: "XAU Breakout", market: "XAUUSD", type: "Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.78 0.16 240)", description: "Sistema breakout su oro. Apre posizioni sulla rottura di livelli chiave di volatilità con stop loss strutturale e trailing dinamico." },
+  { id: "xau-mr", name: "XAU Mean Reversion", market: "XAUUSD", type: "Mean Reversion", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.72 0.18 245)", description: "Strategia mean reversion su oro. Sfrutta gli eccessi di prezzo di breve periodo con take profit fissi e gestione del rischio prudente." },
+  { id: "xau-tf", name: "XAU Trend Following", market: "XAUUSD", type: "Trend Following", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.66 0.20 250)", description: "Sistema trend following su oro. Cavalca movimenti direzionali di medio periodo con trailing stop progressivo." },
+  { id: "nas-bo-buy", name: "NAS100 Range Breakout Buy", market: "NAS100", type: "Range Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.74 0.15 220)", description: "Long-only su Nasdaq 100. Entra sulla rottura rialzista di range di sessione con stop loss e take profit definiti." },
+  { id: "nas-bo-sell", name: "NAS100 Range Breakout Sell", market: "NAS100", type: "Range Breakout", direction: "Sell", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.62 0.17 225)", description: "Short-only su Nasdaq 100. Specchio del sistema buy, opera sulle rotture ribassiste con la stessa logica simmetrica." },
+  { id: "btc-bo-buy", name: "BTCUSD Breakout Buy", market: "BTCUSD", type: "Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.70 0.16 255)", description: "Long-only su Bitcoin. Sfrutta i breakout di volatilità tipici delle fasi di espansione del prezzo." },
+  { id: "btc-bo-sell", name: "BTCUSD Breakout Sell", market: "BTCUSD", type: "Breakout", direction: "Sell", timeframe: "H1", status: "Testing", weight: 1, color: "oklch(0.58 0.18 260)", description: "Short-only su Bitcoin. Attualmente in fase di testing prima del passaggio al portfolio live." },
+  { id: "ger-bo-buy", name: "GER40 Range Breakout Buy", market: "GER40", type: "Range Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.68 0.10 235)", description: "Long-only sull'indice DAX. Opera sulla rottura del range di apertura con gestione del rischio integrata." },
+  { id: "ger-bo-sell", name: "GER40 Range Breakout Sell", market: "GER40", type: "Range Breakout", direction: "Sell", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.56 0.10 240)", description: "Short-only sull'indice DAX. Versione speculare del sistema buy, completa il portfolio di sessione europea." },
 ];
 
 const MARKETS = ["Tutti", "XAUUSD", "NAS100", "BTCUSD", "GER40"] as const;
@@ -49,11 +50,17 @@ export function SistemiPortfolio() {
   const [selected, setSelected] = useState<string | null>(null);
   const [filter, setFilter] = useState<Market>("Tutti");
   const [openSystem, setOpenSystem] = useState<System | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filtered = useMemo(
     () => (filter === "Tutti" ? SYSTEMS : SYSTEMS.filter((s) => s.market === filter)),
     [filter],
   );
+
+  const INITIAL_COUNT = 3;
+  const isTutti = filter === "Tutti";
+  const visible = isTutti && !showAll ? filtered.slice(0, INITIAL_COUNT) : filtered;
+  const hiddenCount = filtered.length - visible.length;
 
   return (
     <section id="sistemi" className="relative py-16 sm:py-24 border-t border-border/40">
@@ -89,7 +96,10 @@ export function SistemiPortfolio() {
           {MARKETS.map((m) => (
             <button
               key={m}
-              onClick={() => setFilter(m)}
+              onClick={() => {
+                setFilter(m);
+                setShowAll(false);
+              }}
               className={`rounded-full px-3.5 py-1.5 text-xs font-mono transition-colors ${
                 filter === m
                   ? "bg-primary/15 text-primary border border-primary/30"
@@ -103,7 +113,7 @@ export function SistemiPortfolio() {
 
         {/* System cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {filtered.map((s) => (
+          {visible.map((s) => (
             <SystemCard
               key={s.id}
               system={s}
@@ -113,6 +123,28 @@ export function SistemiPortfolio() {
             />
           ))}
         </div>
+
+        {isTutti && hiddenCount > 0 && (
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-foreground hover:text-primary transition-colors"
+            >
+              Mostra altri {hiddenCount} sistemi
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        )}
+        {isTutti && showAll && filtered.length > INITIAL_COUNT && (
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={() => setShowAll(false)}
+              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Mostra meno
+            </button>
+          </div>
+        )}
 
         <p className="mt-5 text-xs text-muted-foreground font-mono">
           // Clicca su uno spicchio o su una card per evidenziare il sistema. I backtest completi verranno collegati progressivamente.
@@ -160,15 +192,15 @@ function DonutCard({
         </p>
         <h3 className="text-lg font-semibold mb-4">Multi-Strategy Portfolio</h3>
 
-        <div className="relative h-[280px] sm:h-[320px]">
+        <div className="relative h-[320px] sm:h-[360px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
                 dataKey="value"
                 nameKey="name"
-                innerRadius="58%"
-                outerRadius="90%"
+                innerRadius="62%"
+                outerRadius="98%"
                 paddingAngle={2}
                 stroke="oklch(0.18 0.02 250)"
                 strokeWidth={2}
@@ -188,12 +220,12 @@ function DonutCard({
           </ResponsiveContainer>
 
           {/* center label */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-6">
             <p className="text-3xl sm:text-4xl font-bold text-gradient-blue font-mono">9</p>
             <p className="text-[11px] sm:text-xs font-mono text-muted-foreground uppercase tracking-[0.18em] mt-0.5">
               sistemi
             </p>
-            <p className="text-[10px] sm:text-[11px] font-mono text-muted-foreground/80 mt-2">
+            <p className="text-[9px] sm:text-[10px] font-mono text-muted-foreground/80 mt-2 whitespace-nowrap">
               XAU · NAS100 · BTC · GER40
             </p>
           </div>
@@ -214,7 +246,7 @@ function DonutTooltip({ active, payload }: { active?: boolean; payload?: Array<{
     <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur px-3 py-2 text-xs shadow-xl">
       <p className="font-semibold text-foreground">{s.name}</p>
       <p className="font-mono text-muted-foreground mt-0.5">
-        {s.market} · {s.type}
+        {s.market} · {s.timeframe}
         {s.direction ? ` · ${s.direction}` : ""}
       </p>
     </div>
@@ -295,7 +327,7 @@ function SystemCard({
             {system.name}
           </h4>
           <p className="text-[11px] font-mono text-muted-foreground mt-1">
-            {system.market} · {system.type}
+            {system.market} · {system.timeframe}
             {system.direction ? ` · ${system.direction}` : ""}
           </p>
         </div>
@@ -394,10 +426,6 @@ function PerformanceLive() {
           />
         </div>
       </div>
-
-      <p className="mt-4 text-xs text-muted-foreground font-mono text-center">
-        // I backtest analizzano i singoli sistemi. FX Blue monitora il portfolio live.
-      </p>
     </div>
   );
 }
@@ -421,7 +449,7 @@ function SystemDetailsDialog({
                   style={{ background: system.color }}
                 />
                 <span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
-                  {system.market} · {system.type}
+                  {system.market} · {system.timeframe}
                   {system.direction ? ` · ${system.direction}` : ""}
                 </span>
               </div>
