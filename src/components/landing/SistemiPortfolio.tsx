@@ -50,11 +50,17 @@ export function SistemiPortfolio() {
   const [selected, setSelected] = useState<string | null>(null);
   const [filter, setFilter] = useState<Market>("Tutti");
   const [openSystem, setOpenSystem] = useState<System | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filtered = useMemo(
     () => (filter === "Tutti" ? SYSTEMS : SYSTEMS.filter((s) => s.market === filter)),
     [filter],
   );
+
+  const INITIAL_COUNT = 3;
+  const isTutti = filter === "Tutti";
+  const visible = isTutti && !showAll ? filtered.slice(0, INITIAL_COUNT) : filtered;
+  const hiddenCount = filtered.length - visible.length;
 
   return (
     <section id="sistemi" className="relative py-16 sm:py-24 border-t border-border/40">
@@ -90,7 +96,10 @@ export function SistemiPortfolio() {
           {MARKETS.map((m) => (
             <button
               key={m}
-              onClick={() => setFilter(m)}
+              onClick={() => {
+                setFilter(m);
+                setShowAll(false);
+              }}
               className={`rounded-full px-3.5 py-1.5 text-xs font-mono transition-colors ${
                 filter === m
                   ? "bg-primary/15 text-primary border border-primary/30"
@@ -104,7 +113,7 @@ export function SistemiPortfolio() {
 
         {/* System cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {filtered.map((s) => (
+          {visible.map((s) => (
             <SystemCard
               key={s.id}
               system={s}
@@ -114,6 +123,28 @@ export function SistemiPortfolio() {
             />
           ))}
         </div>
+
+        {isTutti && hiddenCount > 0 && (
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-foreground hover:text-primary transition-colors"
+            >
+              Mostra altri {hiddenCount} sistemi
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        )}
+        {isTutti && showAll && filtered.length > INITIAL_COUNT && (
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={() => setShowAll(false)}
+              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Mostra meno
+            </button>
+          </div>
+        )}
 
         <p className="mt-5 text-xs text-muted-foreground font-mono">
           // Clicca su uno spicchio o su una card per evidenziare il sistema. I backtest completi verranno collegati progressivamente.
