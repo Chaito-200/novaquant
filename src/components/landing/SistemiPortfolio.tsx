@@ -24,6 +24,7 @@ type System = {
   market: "XAUUSD" | "NAS100" | "BTCUSD" | "GER40";
   type: string;
   direction?: "Buy" | "Sell";
+  timeframe: string;
   status: Status;
   weight: number;
   color: string;
