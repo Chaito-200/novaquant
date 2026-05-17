@@ -192,15 +192,15 @@ function DonutCard({
         </p>
         <h3 className="text-lg font-semibold mb-4">Multi-Strategy Portfolio</h3>
 
-        <div className="relative h-[280px] sm:h-[320px]">
+        <div className="relative h-[320px] sm:h-[360px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
                 dataKey="value"
                 nameKey="name"
-                innerRadius="58%"
-                outerRadius="90%"
+                innerRadius="62%"
+                outerRadius="98%"
                 paddingAngle={2}
                 stroke="oklch(0.18 0.02 250)"
                 strokeWidth={2}
@@ -220,12 +220,12 @@ function DonutCard({
           </ResponsiveContainer>
 
           {/* center label */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-6">
             <p className="text-3xl sm:text-4xl font-bold text-gradient-blue font-mono">9</p>
             <p className="text-[11px] sm:text-xs font-mono text-muted-foreground uppercase tracking-[0.18em] mt-0.5">
               sistemi
             </p>
-            <p className="text-[10px] sm:text-[11px] font-mono text-muted-foreground/80 mt-2">
+            <p className="text-[9px] sm:text-[10px] font-mono text-muted-foreground/80 mt-2 whitespace-nowrap">
               XAU · NAS100 · BTC · GER40
             </p>
           </div>
