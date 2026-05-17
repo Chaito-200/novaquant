@@ -32,7 +32,7 @@ type System = {
 };
 
 const SYSTEMS: System[] = [
-  { id: "xau-bo", name: "XAU Breakout", market: "XAUUSD", type: "Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.78 0.16 240)", description: "Sistema breakout su oro. Apre posizioni sulla rottura di livelli chiave di volatilità con stop loss strutturale e trailing dinamico." },
+  { id: "xau-bo", name: "XAU Trend Following Buy", market: "XAUUSD", type: "Trend Following", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.78 0.16 240)", description: "Sistema trend following su oro. Apre posizioni sulla rottura di livelli chiave di volatilità con stop loss strutturale e trailing dinamico." },
   { id: "xau-mr", name: "XAU Mean Reversion", market: "XAUUSD", type: "Mean Reversion", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.72 0.18 245)", description: "Strategia mean reversion su oro. Sfrutta gli eccessi di prezzo di breve periodo con take profit fissi e gestione del rischio prudente." },
   { id: "xau-tf", name: "XAU Trend Following", market: "XAUUSD", type: "Trend Following", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.66 0.20 250)", description: "Sistema trend following su oro. Cavalca movimenti direzionali di medio periodo con trailing stop progressivo." },
   { id: "nas-bo-buy", name: "NAS100 Range Breakout Buy", market: "NAS100", type: "Range Breakout", direction: "Buy", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.74 0.15 220)", description: "Long-only su Nasdaq 100. Entra sulla rottura rialzista di range di sessione con stop loss e take profit definiti." },
