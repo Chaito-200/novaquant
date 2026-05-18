@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { ArrowUpRight, ExternalLink, Activity, CircleDot } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Activity, CircleDot, Layers } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -43,24 +43,20 @@ const SYSTEMS: System[] = [
   { id: "ger-bo-sell", name: "GER40 Range Breakout Sell", market: "GER40", type: "Range Breakout", direction: "Sell", timeframe: "H1", status: "Live", weight: 1, color: "oklch(0.56 0.10 240)", description: "Short-only sull'indice DAX. Versione speculare del sistema buy, completa il portfolio di sessione europea." },
 ];
 
-const MARKETS = ["Tutti", "XAUUSD", "NAS100", "BTCUSD", "GER40"] as const;
+const MARKETS = ["Portfolio", "XAUUSD", "NAS100", "BTCUSD", "GER40"] as const;
 type Market = (typeof MARKETS)[number];
 
 export function SistemiPortfolio() {
   const [selected, setSelected] = useState<string | null>(null);
-  const [filter, setFilter] = useState<Market>("Tutti");
+  const [filter, setFilter] = useState<Market>("Portfolio");
   const [openSystem, setOpenSystem] = useState<System | null>(null);
-  const [showAll, setShowAll] = useState(false);
+  const [openPortfolio, setOpenPortfolio] = useState(false);
 
+  const isPortfolio = filter === "Portfolio";
   const filtered = useMemo(
-    () => (filter === "Tutti" ? SYSTEMS : SYSTEMS.filter((s) => s.market === filter)),
-    [filter],
+    () => (isPortfolio ? SYSTEMS : SYSTEMS.filter((s) => s.market === filter)),
+    [filter, isPortfolio],
   );
-
-  const INITIAL_COUNT = 3;
-  const isTutti = filter === "Tutti";
-  const visible = isTutti && !showAll ? filtered.slice(0, INITIAL_COUNT) : filtered;
-  const hiddenCount = filtered.length - visible.length;
 
   return (
     <section id="sistemi" className="relative py-16 sm:py-24 border-t border-border/40">
@@ -98,7 +94,6 @@ export function SistemiPortfolio() {
               key={m}
               onClick={() => {
                 setFilter(m);
-                setShowAll(false);
               }}
               className={`rounded-full px-3.5 py-1.5 text-xs font-mono transition-colors ${
                 filter === m
@@ -111,43 +106,26 @@ export function SistemiPortfolio() {
           ))}
         </div>
 
-        {/* System cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {visible.map((s) => (
-            <SystemCard
-              key={s.id}
-              system={s}
-              active={selected === s.id}
-              onSelect={() => setSelected((prev) => (prev === s.id ? null : s.id))}
-              onDetails={() => setOpenSystem(s)}
-            />
-          ))}
-        </div>
-
-        {isTutti && hiddenCount > 0 && (
-          <div className="mt-5 flex justify-center">
-            <button
-              onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-foreground hover:text-primary transition-colors"
-            >
-              Mostra altri {hiddenCount} sistemi
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
-        )}
-        {isTutti && showAll && filtered.length > INITIAL_COUNT && (
-          <div className="mt-5 flex justify-center">
-            <button
-              onClick={() => setShowAll(false)}
-              className="inline-flex items-center gap-2 rounded-full hairline bg-surface/40 px-5 py-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Mostra meno
-            </button>
+        {isPortfolio ? (
+          <PortfolioAggregateCard onDetails={() => setOpenPortfolio(true)} />
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {filtered.map((s) => (
+              <SystemCard
+                key={s.id}
+                system={s}
+                active={selected === s.id}
+                onSelect={() => setSelected((prev) => (prev === s.id ? null : s.id))}
+                onDetails={() => setOpenSystem(s)}
+              />
+            ))}
           </div>
         )}
 
         <p className="mt-5 text-xs text-muted-foreground font-mono">
-          // Clicca su uno spicchio o su una card per evidenziare il sistema. I backtest completi verranno collegati progressivamente.
+          // {isPortfolio
+            ? "Seleziona un mercato per esplorare i singoli sistemi. I backtest completi verranno collegati progressivamente."
+            : "Clicca su uno spicchio o su una card per evidenziare il sistema. I backtest completi verranno collegati progressivamente."}
         </p>
 
         {/* Performance live block */}
@@ -168,6 +146,7 @@ export function SistemiPortfolio() {
       </div>
 
       <SystemDetailsDialog system={openSystem} onClose={() => setOpenSystem(null)} />
+      <PortfolioDetailsDialog open={openPortfolio} onClose={() => setOpenPortfolio(false)} />
     </section>
   );
 }
