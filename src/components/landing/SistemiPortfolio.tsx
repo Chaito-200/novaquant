@@ -509,12 +509,18 @@ function PortfolioAggregateCard({ onDetails }: { onDetails: () => void }) {
           <StatusBadge status="Live" />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-5 border-t border-border/50 mb-6">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-5 border-t border-border/50 mb-5">
           <BigMetric l="Return" v="—" accent />
           <BigMetric l="Max DD" v="—" />
           <BigMetric l="Sharpe" v="—" />
-          <BigMetric l="Sistemi" v={String(SYSTEMS.length)} />
+          <BigMetric l="Profit Factor" v="—" />
+          <BigMetric l="Win %" v="—" />
+          <BigMetric l="Trades" v="—" />
         </div>
+
+        <p className="text-[10px] sm:text-[11px] font-mono text-muted-foreground mb-5">
+          // Backtest: periodo in aggiornamento
+        </p>
 
         <div className="flex flex-wrap items-center gap-2 mb-6">
           {markets.map((m) => (
@@ -540,10 +546,12 @@ function PortfolioAggregateCard({ onDetails }: { onDetails: () => void }) {
 
 function BigMetric({ l, v, accent }: { l: string; v: string; accent?: boolean }) {
   return (
-    <div className="hairline rounded-lg bg-surface/40 px-4 py-3">
-      <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">{l}</p>
+    <div className="hairline rounded-lg bg-surface/40 px-2.5 py-2">
+      <p className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono leading-tight">
+        {l}
+      </p>
       <p
-        className={`text-xl sm:text-2xl font-bold font-mono mt-1 ${
+        className={`text-sm sm:text-base font-bold font-mono mt-1 ${
           accent ? "text-gradient-blue" : "text-foreground"
         }`}
       >
