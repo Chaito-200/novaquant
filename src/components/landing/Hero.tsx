@@ -15,7 +15,8 @@ export function Hero() {
               Il trading quantitativo, accessibile a chiunque
             </div>
             <h1 className="text-[2rem] leading-[1.1] sm:text-5xl lg:text-6xl font-semibold text-gradient">
-              Trading algoritmico costruito sui dati,{" "}
+              Trading algoritmico costruito sui dati,&nbsp;
+              <br />
               <span className="text-gradient-blue">non sulle promesse.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
