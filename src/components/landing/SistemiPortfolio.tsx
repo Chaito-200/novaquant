@@ -546,10 +546,12 @@ function PortfolioAggregateCard({ onDetails }: { onDetails: () => void }) {
 
 function BigMetric({ l, v, accent }: { l: string; v: string; accent?: boolean }) {
   return (
-    <div className="hairline rounded-lg bg-surface/40 px-4 py-3">
-      <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">{l}</p>
+    <div className="hairline rounded-lg bg-surface/40 px-2.5 py-2">
+      <p className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono leading-tight">
+        {l}
+      </p>
       <p
-        className={`text-xl sm:text-2xl font-bold font-mono mt-1 ${
+        className={`text-sm sm:text-base font-bold font-mono mt-1 ${
           accent ? "text-gradient-blue" : "text-foreground"
         }`}
       >
