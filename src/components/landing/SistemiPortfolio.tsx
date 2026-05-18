@@ -509,12 +509,18 @@ function PortfolioAggregateCard({ onDetails }: { onDetails: () => void }) {
           <StatusBadge status="Live" />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-5 border-t border-border/50 mb-6">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-5 border-t border-border/50 mb-5">
           <BigMetric l="Return" v="—" accent />
           <BigMetric l="Max DD" v="—" />
           <BigMetric l="Sharpe" v="—" />
-          <BigMetric l="Sistemi" v={String(SYSTEMS.length)} />
+          <BigMetric l="Profit Factor" v="—" />
+          <BigMetric l="Win %" v="—" />
+          <BigMetric l="Trades" v="—" />
         </div>
+
+        <p className="text-[10px] sm:text-[11px] font-mono text-muted-foreground mb-5">
+          // Backtest: periodo in aggiornamento
+        </p>
 
         <div className="flex flex-wrap items-center gap-2 mb-6">
           {markets.map((m) => (
