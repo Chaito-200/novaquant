@@ -27,6 +27,7 @@ function Index() {
       <Reveal><ComeFunziona /></Reveal>
       <Reveal><ChiSiamo /></Reveal>
       <Reveal><PerChi /></Reveal>
+      <Reveal><Faq /></Reveal>
       <Reveal><CtaTelegram /></Reveal>
       <Footer />
     </main>
