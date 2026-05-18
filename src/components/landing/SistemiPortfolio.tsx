@@ -476,3 +476,134 @@ function SystemDetailsDialog({
     </Dialog>
   );
 }
+
+function PortfolioAggregateCard({ onDetails }: { onDetails: () => void }) {
+  const markets = Array.from(new Set(SYSTEMS.map((s) => s.market)));
+  return (
+    <article className="relative card-elevated rounded-2xl p-6 sm:p-8 overflow-hidden">
+      <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
+      <div
+        className="absolute top-0 left-0 right-0 h-0.5"
+        style={{
+          background:
+            "linear-gradient(90deg, oklch(0.78 0.16 240), oklch(0.66 0.20 250), oklch(0.58 0.18 260))",
+        }}
+      />
+      <div className="relative">
+        <div className="flex items-start justify-between gap-4 mb-5">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <Layers className="h-4 w-4 text-primary" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                Portfolio aggregato · {SYSTEMS.length} sistemi
+              </span>
+            </div>
+            <h4 className="text-xl sm:text-2xl font-semibold leading-tight text-gradient">
+              NovaQuant Multi-Strategy Portfolio
+            </h4>
+            <p className="mt-2 text-sm text-muted-foreground max-w-xl leading-relaxed">
+              Risultato aggregato di tutti i sistemi del portfolio: tutte le strategie, tutti i
+              mercati, un'unica curva di equity.
+            </p>
+          </div>
+          <StatusBadge status="Live" />
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-5 border-t border-border/50 mb-6">
+          <BigMetric l="Return" v="—" accent />
+          <BigMetric l="Max DD" v="—" />
+          <BigMetric l="Sharpe" v="—" />
+          <BigMetric l="Sistemi" v={String(SYSTEMS.length)} />
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          {markets.map((m) => (
+            <span
+              key={m}
+              className="hairline rounded-full bg-surface/40 px-2.5 py-1 text-[10px] font-mono text-muted-foreground"
+            >
+              {m}
+            </span>
+          ))}
+        </div>
+
+        <button
+          onClick={onDetails}
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-primary hover:text-primary/80 font-mono transition-colors"
+        >
+          Vedi backtest <ArrowUpRight className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    </article>
+  );
+}
+
+function BigMetric({ l, v, accent }: { l: string; v: string; accent?: boolean }) {
+  return (
+    <div className="hairline rounded-lg bg-surface/40 px-4 py-3">
+      <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">{l}</p>
+      <p
+        className={`text-xl sm:text-2xl font-bold font-mono mt-1 ${
+          accent ? "text-gradient-blue" : "text-foreground"
+        }`}
+      >
+        {v}
+      </p>
+    </div>
+  );
+}
+
+function PortfolioDetailsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
+      <DialogContent className="max-w-2xl bg-background border-border">
+        <DialogHeader>
+          <div className="flex items-center gap-2 mb-2">
+            <Layers className="h-4 w-4 text-primary" />
+            <span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+              Portfolio aggregato · {SYSTEMS.length} sistemi
+            </span>
+          </div>
+          <DialogTitle className="text-xl font-semibold text-gradient">
+            NovaQuant Multi-Strategy Portfolio
+          </DialogTitle>
+          <DialogDescription className="text-sm text-muted-foreground leading-relaxed pt-1">
+            Risultati aggregati dell'intero portfolio. Tutte le strategie, tutti i mercati, una
+            sola curva di equity. I backtest completi verranno integrati progressivamente.
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="mt-4 space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { l: "Status", v: "Live" },
+              { l: "Return", v: "—" },
+              { l: "Max DD", v: "—" },
+              { l: "Sharpe", v: "—" },
+            ].map((m) => (
+              <div key={m.l} className="hairline rounded-lg bg-surface/40 px-3 py-2.5">
+                <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
+                  {m.l}
+                </p>
+                <p className="text-sm font-mono font-semibold mt-0.5">{m.v}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="hairline rounded-xl bg-surface/40 aspect-[16/9] flex items-center justify-center text-center p-6">
+            <div>
+              <Activity className="h-8 w-8 text-primary/60 mx-auto mb-3" />
+              <p className="text-sm text-foreground/80 font-medium">
+                Report backtest del portfolio in arrivo
+              </p>
+              <p className="text-xs text-muted-foreground mt-1 max-w-sm">
+                Equity curve, drawdown e distribuzione dei trade aggregati verranno integrati
+                progressivamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
